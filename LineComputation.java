@@ -31,16 +31,22 @@ public class LineComputation {
         if(equality){
             System.out.println("The lines are equal");
         }else {
-            System.out.println("The lines are unequal");
+             if(line1>line2){
+                 System.out.println("line 1 is greater in magnitude");
+             }else{
+                 System.out.println("line 2 is greater in magnitude");
+             }
         }
     }
     public static void main(String[] args) {
 
         System.out.println("Welcome to Line Computation Comparison Program");
 
+        System.out.println("please provide the coordinates for both the lines");
         double line1 = calculate_length();
         double line2 = calculate_length();
 
+        System.out.println("Checking equality of the lines");
         check_equality(line1, line2);
 
 
