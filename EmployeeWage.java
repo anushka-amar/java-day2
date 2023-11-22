@@ -27,6 +27,31 @@ public class EmployeeWage {
         System.out.println("The part time employee is "+partEmp+" and her daily wage is "+ wagePerHr*workHr);
 
     }
+
+    static void mothlyWageCalc(String emp_type){
+        int emp_hrs = 0, emp_wage = 0, wagePerDay=0, totalMonthlyWage = 0;
+        for(int day = 0; day<20; day++){
+            switch (emp_type){
+                case "part":
+                    emp_hrs = 4;
+                    emp_wage = 12;
+                    break;
+
+                case "full":
+                    emp_hrs = 8;
+                    emp_wage = 20;
+                    break;
+
+                default:
+                    System.out.println("INVALID");
+                    break;
+            }
+            wagePerDay = emp_hrs*emp_wage;
+            totalMonthlyWage += wagePerDay;
+        }
+        System.out.println("Monthly wage of "+emp_type+"-time employee is "+totalMonthlyWage);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to employee wage calculator");
@@ -53,5 +78,7 @@ public class EmployeeWage {
                 System.out.println("INVALID");
                 break;
         }
+
+        mothlyWageCalc(emp_type);
     }
 }
