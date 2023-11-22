@@ -52,6 +52,42 @@ public class EmployeeWage {
         System.out.println("Monthly wage of "+emp_type+"-time employee is "+totalMonthlyWage);
     }
 
+    static void monthlyWageOnCondition(String emp_type, int workHr){
+        if(workHr<100) {
+            switch (emp_type) {
+                case "part":
+                    System.out.println("Your monthly wage sums upto "+ 12*workHr);
+                    break;
+
+                case "full":
+                    System.out.println("Your monthly wage sums upto "+ 20*workHr);
+                    break;
+
+                default:
+                    System.out.println("INVALID");
+                    break;
+            }
+        }
+        else if(workHr>100) {
+            workHr = 100;
+
+            switch (emp_type) {
+                case "part":
+                    System.out.println("Your monthly wage sums upto "+ 12*workHr);
+                    break;
+
+                case "full":
+                    System.out.println("Your monthly wage sums upto "+ 20*workHr);
+                    break;
+
+                default:
+                    System.out.println("INVALID");
+                    break;
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to employee wage calculator");
@@ -80,5 +116,9 @@ public class EmployeeWage {
         }
 
         mothlyWageCalc(emp_type);
+
+        System.out.println("Enter monthly work hour");
+        int work_hour = scanner.nextInt();
+        monthlyWageOnCondition(emp_type, work_hour);
     }
 }
